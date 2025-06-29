@@ -11,8 +11,8 @@ public class VehicleRepositoryStatic implements VehicleRepository {
 
     @Override
     public Optional<Vehicle> find(@NonNull RegistrationNumber regNo) {
-        // I en databas implementation så skulle det finnas egen databas klass för VehicleDB
-        // som mappas till domän klassen Vehicle
+        // I en databas implementation så skulle det finnas egen databas klass för VehicleDB som här mappas till
+        // domänklassen Vehicle
         return regNo.equals(RegistrationNumber.ABC) ? Optional.of(Vehicle.ABC) :
                 regNo.equals(RegistrationNumber.DEF) ? Optional.of(Vehicle.DEF) : Optional.empty();
     }
