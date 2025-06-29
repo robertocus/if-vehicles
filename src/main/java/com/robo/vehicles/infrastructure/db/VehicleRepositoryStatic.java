@@ -14,7 +14,6 @@ public class VehicleRepositoryStatic implements VehicleRepository {
         // I riktig databas implementation så skulle det finnas egen databas klass för VehicleDB
         // som mappas till domän klassen Vehicle
         return regNo.equals(RegistrationNumber.ABC) ? Optional.of(Vehicle.ABC) :
-                regNo.equals(RegistrationNumber.DEF) ? Optional.of(Vehicle.DEF) :
-                        regNo.equals(RegistrationNumber.GHJ) ? Optional.of(Vehicle.GHJ) : Optional.empty();
+                regNo.equals(RegistrationNumber.DEF) ? Optional.of(Vehicle.DEF) : Optional.empty();
     }
 }

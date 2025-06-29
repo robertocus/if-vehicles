@@ -5,10 +5,11 @@ import lombok.Value;
 
 @Value
 public class Vehicle {
-    public static final Vehicle ABC = new Vehicle(RegistrationNumber.ABC);
-    public static final Vehicle DEF = new Vehicle(RegistrationNumber.DEF);
-    public static final Vehicle GHJ = new Vehicle(RegistrationNumber.GHJ);
+    public static final Vehicle ABC = new Vehicle(RegistrationNumber.ABC, "Volvo");
+    public static final Vehicle DEF = new Vehicle(RegistrationNumber.DEF, "Saab");
 
     @NonNull
     public RegistrationNumber registrationNumber;
+    @NonNull
+    public String type;
 }
