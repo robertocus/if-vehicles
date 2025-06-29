@@ -31,7 +31,8 @@ class VehiclesControllerTest {
         this.mockMvc.perform(get("/vehicles/ABC123"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(jsonPath("$.registrationNumber").value(Vehicle.ABC.registrationNumber.value));
+                .andExpect(jsonPath("$.registrationNumber").value(Vehicle.ABC.registrationNumber.value))
+                .andExpect(jsonPath("$.type").value(Vehicle.ABC.type));
 
         verify(this.vehicleFinder, times(1)).find(any());
     }
@@ -40,7 +41,7 @@ class VehiclesControllerTest {
     public void whenFindNoneExistingVehicle() throws Exception {
         when(this.vehicleFinder.find(any())).thenReturn(Optional.empty());
 
-        this.mockMvc.perform(get("/vehicles/ABC123")).andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/vehicles/ADB123")).andExpect(status().isNotFound());
 
         verify(this.vehicleFinder, times(1)).find(any());
     }
